@@ -1,0 +1,16 @@
+{% extends "core/base.html" %}
+{% block title %}Tasks Details{% endblock %}
+{% block content %}
+    <h1>{{ object.title }}</h1>
+    <p><strong>Descrição:</strong> {{ object.description }}</p>
+    <p><strong>Projeto:</strong> {{ object.project.name }}</p>
+    <p><strong>Status:</strong> {{ object.get_status_display }}</p>
+    <p><strong>Prioridade:</strong> {{ object.get_priority_display }}</p>
+    <p><strong>Responsável:</strong> {{ object.assigned_to }}</p>
+    <p><strong>Data de entrega:</strong> {{ object.due_date|date:"d/m/Y" }}</p>
+    <p><strong>Criada em:</strong> {{ object.created_at|date:"d/m/Y H:i" }}</p>
+
+    <a class="btn btn-warning" href="{% url 'core:task_update' object.pk %}">Edit</a>
+    <a class="btn btn-danger" href="{% url 'core:task_delete' object.pk %}">Delete</a>
+    <a class="btn btn-secondary" href="{% url 'core:task_list' %}">Return</a>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "core/base.html" %}
+{% block title %}My Projects{% endblock %}
+{% block content %}
+  <h1>My Projects</h1>
+  <div class="row">
+    {% for p in projects %}
+      <div class="col-md-4">
+        <div class="card mb-3 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">{{ p.name }}</h5>
+            <p class="card-text">{{ p.description|truncatewords:10 }}</p>
+            <a href="{% url 'core:project_detail' p.pk %}" class="btn btn-primary btn-sm">Open</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

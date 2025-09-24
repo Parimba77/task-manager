@@ -1,0 +1,18 @@
+{% extends "core/base.html" %}
+{% block title %}Project Details{% endblock %}
+{% block content%}
+    <h1>{{ object.name }}</h1>
+    <p>{{ object.description }}</p>
+    <p><strong>Criado em:</strong>{{ object.created_at|date:"d/m/Y" }}</p>
+    <a class="btn btn-warning" href="{% url 'core:project_update' object.pk %}">Editar</a>
+    <a class="btn btn-danger" href="{% url 'core:project_delete' object.pk %}">Excluir</a>
+    <hr>
+    <h2>Tasks</h2>
+    <ul>
+        {% for task in object.tasks.all %}
+        <li>{{ task.title }} - {{ task.get_status_display }}</li>
+        {% empty %}
+      <li>Nenhuma tarefa.</li>
+    {% endfor %}
+    </ul>
+{% endblock %}
