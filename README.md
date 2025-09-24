@@ -12,7 +12,7 @@ Allows you to create **Users**, **Projects** and **Tasks**, with authentication 
 
 ## ⚙️ Instalação
 ```bash
-git clone https://github.com/Parimba77/taskmanager.git
+git clone https://github.com/Parimba77/task-manager
 cd taskmanager
 python -m venv venv
 source venv/bin/activate  # Linux
