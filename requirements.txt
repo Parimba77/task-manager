@@ -1,0 +1,4 @@
+asgiref==3.x.x
+Django==5.x.x
+sqlparse==0.5.x
+tzdata==2025.x
