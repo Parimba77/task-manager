@@ -1,4 +1,4 @@
-# Task Manager (Projeto Seletiva Veloz)
+# Task Manager (Project of Veloz selective)
 
 ## 📌 Descrição
 Task Management application made with Django, as part of the challenge of the Veloz selective. 
