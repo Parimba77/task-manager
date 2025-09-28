@@ -59,6 +59,5 @@ class Task(models.Model):
     due_date = models.DateField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     
-    def __init__(self):
+    def __str__(self):
         return f"{self.title} ({self.project.name})"
-

@@ -1,4 +1,4 @@
-asgiref==3.x.x
-Django==5.x.x
-sqlparse==0.5.x
-tzdata==2025.x
+Django==5.2.6
+asgiref==3.8.1
+sqlparse==0.5.4
+tzdata==2025.1
