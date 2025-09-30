@@ -8,7 +8,7 @@ class SignUpView(CreateView):
     form_class = UserCreationForm
     template_name = "registration/signup.html"
     success_url = reverse_lazy("login")
-
+    
 #Projects
 class ProjectListView(LoginRequiredMixin, ListView):
     model = Project
@@ -61,7 +61,7 @@ class TaskListView(LoginRequiredMixin, ListView):
     
 class TaskCreateView(LoginRequiredMixin, CreateView):
     model = Task
-    template_name = "core/task_create.html"
+    template_name = "core/task_form.html"
     fields = ['title', 'description', 'project', 'assigned_to', 'status', 'priority', 'due_date']
     success_url = reverse_lazy('core:task_list')
     

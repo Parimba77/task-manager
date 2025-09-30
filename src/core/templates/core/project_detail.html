@@ -15,4 +15,5 @@
       <li>Nenhuma tarefa.</li>
     {% endfor %}
     </ul>
+    <a class="btn btn-primary" href="{% url 'core:task_create' %}?project={{ object.pk }}">Add Task</a>
 {% endblock %}
