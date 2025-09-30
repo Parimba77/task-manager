@@ -29,7 +29,7 @@ ALLOWED_HOSTS = []
 
 LOGIN_URL = "login"
 LOGIN_REDIRECT_URL = "core:project_list"
-LOGOUT_REDIRECT_URL = "login"
+LOGOUT_REDIRECT_URL = "core:homepage"
 
 # Application definition
 

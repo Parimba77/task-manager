@@ -3,7 +3,12 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from .models import Task, Project
 from django.contrib.auth.mixins import LoginRequiredMixin   
 from django.contrib.auth.forms import UserCreationForm
+from django.shortcuts import render, redirect
 
+def home(request):
+    if request.user.is_authenticated:
+        return redirect("core:project_list")
+    return render(request, "core/home.html")
 class SignUpView(CreateView):
     form_class = UserCreationForm
     template_name = "registration/signup.html"

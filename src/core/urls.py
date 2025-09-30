@@ -4,7 +4,10 @@ from .views import SignUpView
 from django.contrib.auth import views as auth_views
 
 app_name = "core"
+
 urlpatterns = [
+    path('', views.home, name='homepage'),
+    
     #Projects
     path('projects/', views.ProjectListView.as_view(), name='project_list'),
     path('projects/create/', views.ProjectCreateView.as_view(), name='project_create'),
@@ -19,7 +22,8 @@ urlpatterns = [
     path('tasks/<int:pk>/update/', views.TaskUpdateView.as_view(), name='task_update'),
     path('tasks/<int:pk>/delete/', views.TaskDeleteView.as_view(), name='task_delete'),
     
+    #Registration
     path('signup/', SignUpView.as_view(), name='signup'),
-    path("accounts/login/", auth_views.LoginView.as_view(), name="login"),
-    path("accounts/logout/", auth_views.LogoutView.as_view(), name="logout"),
+    path('accounts/login/', auth_views.LoginView.as_view(), name='login'),
+    path('accounts/logout/', auth_views.LogoutView.as_view(), name='logout'),
 ]

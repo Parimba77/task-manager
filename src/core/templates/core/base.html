@@ -11,7 +11,7 @@
       <div class="container">
         <a class="navbar-brand" href="{% url 'core:project_list' %}">TaskManager</a>
 
-        <!-- Botão hamburguer para mobile -->
+        <!--Mobile Button-->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -20,8 +20,6 @@
         <!-- Links -->
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="{% url 'core:task_list' %}">Tasks</a></li>
-
             {% if user.is_authenticated %}
               <li class="nav-item">
                 <form method="post" action="{% url 'logout' %}" style="display:inline;">
@@ -32,7 +30,8 @@
                 </form>
               </li>
             {% else %}
-              <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+              <li class="nav-item"><a href="{% url 'login' %}" class="nav-link">Login</a></li>
+              <li class="nav-item"><a href="{% url 'core:signup' %}" class="nav-link">Register</a></li>
             {% endif %}
           </ul>
         </div>
