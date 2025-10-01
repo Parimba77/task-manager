@@ -15,7 +15,7 @@
       </div>
       {% empty %}
       <h5>You have no projects.</h3>
+        {% endfor %}
       <p><a class="btn btn-primary" href="{% url 'core:project_create' %}">Create a project</a></p>
-    {% endfor %}
   </div>
 {% endblock %}

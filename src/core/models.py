@@ -17,6 +17,8 @@ class Project(models.Model):
         return self.name
     
 class Task(models.Model):
+    
+    
     STATUS_CHOICES = [
         ('todo', 'To do'),
         ('in_progress', 'In progress'),

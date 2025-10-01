@@ -6,6 +6,7 @@
     <p><strong>Created at:</strong>{{ object.created_at|date:"d/m/Y" }}</p>
     <a class="btn btn-warning" href="{% url 'core:project_update' object.pk %}">Edit</a>
     <a class="btn btn-danger" href="{% url 'core:project_delete' object.pk %}">Delete</a>
+    <a class="btn btn-secondary" href="{% url 'core:project_list' %}">Return</a>
     <hr>
     <h2>Tasks</h2>
     <ul>
